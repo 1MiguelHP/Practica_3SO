@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ventana_Procesos</class>
+ <widget class="QMainWindow" name="Ventana_Procesos">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>398</width>
+    <height>125</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Simulador de Procesos</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+QPushButton {
+    background-color: #1E1E1E;
+    border: 1px solid #292929;
+    color: #BB86FC;
+}
+
+QPushButton:hover {
+    background-color: #292929;
+}
+
+QLineEdit {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border: 1px solid #292929;
+}
+
+QLabel {
+    color: #E0E0E0;
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    font-family: &quot;Arial&quot;; /* Cambia &quot;Arial&quot; por la familia de fuentes que prefieras */
+    font-size: 8pt; /* Ajusta el tamaño de la fuente según necesites */
+    font-style: normal; /* Opciones: normal, italic */
+    font-weight: bold; /* Opciones: normal, bold, 100, 200, ..., 900 */
+    color: #E0E0E0; /* Ajusta el color del texto */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Agregar Procesos</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>40</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="acept">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>40</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Aceptar</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>398</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

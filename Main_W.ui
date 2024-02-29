@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1090</width>
+    <height>808</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Simulador de Procesos</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+QPushButton {
+    background-color: #1E1E1E;
+    border: 1px solid #292929;
+    color: #BB86FC;
+}
+
+QPushButton:hover {
+    background-color: #292929;
+}
+
+QLineEdit {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border: 1px solid #292929;
+}
+
+QLabel {
+    color: #E0E0E0;
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>50</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Procesos Listos</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>380</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Bloqueados</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>40</y>
+      <width>201</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Procesos en Ejecucion</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>50</y>
+      <width>201</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Procesos Terminados</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>0</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber_2">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>720</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Nuevos Procesos</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>720</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Contador</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Comenzar">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>680</y>
+      <width>161</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Comenzar</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="table_pListos">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>311</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView::section {
+    background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
+    color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
+    padding: 4px;
+    border: 1px solid #6c6c6c;
+}
+QHeaderView::section {
+    font-size: 9pt; /* Un tamaño más grande de texto */
+    font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
+    
+}
+</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TME</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TT</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QTableWidget" name="table_pListos_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>80</y>
+      <width>281</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView::section {
+    background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
+    color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
+    padding: 4px;
+    border: 1px solid #6c6c6c;
+}
+QHeaderView::section {
+    font-size: 9pt; /* Un tamaño más grande de texto */
+    font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
+    
+}
+</string>
+    </property>
+    <row>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>OPER</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>TME</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>TT</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>TR</string>
+     </property>
+    </row>
+   </widget>
+   <widget class="QTableWidget" name="table_pListos_3">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>410</y>
+      <width>211</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView::section {
+    background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
+    color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
+    padding: 4px;
+    border: 1px solid #6c6c6c;
+}
+QHeaderView::section {
+    font-size: 9pt; /* Un tamaño más grande de texto */
+    font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
+    
+}
+</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TTB</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QTableWidget" name="table_pListos_4">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>90</y>
+      <width>321</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView::section {
+    background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
+    color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
+    padding: 4px;
+    border: 1px solid #6c6c6c;
+}
+QHeaderView::section {
+    font-size: 9pt; /* Un tamaño más grande de texto */
+    font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
+    
+}
+</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>OPER</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>RL</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1090</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
