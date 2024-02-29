@@ -21,6 +21,17 @@ class VentanaProcesos(QMainWindow):
 
 #Empezar logica de procesos ------------------------------------------------------------------------------
 
+class Proceso():
+    def __init__(self,id, tiempo, operador, num1, num2):
+        self.id = id
+        self.tiempo = tiempo
+        self.operador = operador
+        self.num1 = num1
+        self.num2 = num2
+        #comentados para prueba
+#            listo = True
+#            ejecucion = False
+#            bloqueado = False
 
 class MainWindow(QMainWindow):
     def __init__(self, no_procesos):
@@ -38,17 +49,7 @@ class MainWindow(QMainWindow):
         self.MAX_PROCESOS_EN_MEMORIA = 3
         self.count = 0
 
-    class Proceso():
-        def __init__(id, tiempo, operador, num1, num2,listo, ejecucion,bloqueado):
-            self.id = id
-            self.tiempo = tiempo
-            self.operador = operador
-            self.num1 = num1
-            self.num2 = num2
-            #comentados para prueba
-#            listo = True
-#            ejecucion = False
-#            bloqueado = False
+
     def actualizarEstados(self):
         if self.totalProcesosEnMemoria() < self.MAX_PROCESOS_EN_MEMORIA:
             proceso_a_listo = self.nuevos.pop(0)
@@ -71,13 +72,13 @@ class MainWindow(QMainWindow):
         self.actualizarDisplayProcesosNuevos()
         for j in range(len(self.nuevos)):
             proceso_actual = self.nuevos[j]
-            id = proceso_actual.get('id', 0)
-            operador = proceso_actual.get('operador', '')
-            num1 = proceso_actual.get('num1', 0)
-            num2 = proceso_actual.get('num2', 0)
+            id = proceso_actual.id
+            operador = proceso_actual.operador
+            num1 = proceso_actual.num1
+            num2 = proceso_actual.num2
             operacion = f"{num1} {operador} {num2}"
             resultado = self.calcular_resultado(num1, num2, operador)
-            tiempo = proceso_actual.get('tiempo', 0)
+            tiempo = proceso_actual.tiempo
 
 
     def inicializarProcesos(self):
@@ -88,7 +89,7 @@ class MainWindow(QMainWindow):
             operador = random.choice(operadores)
             num1 = random.randint(1, 20)
             num2 = random.randint(1, 20)
-            n_proceso= self.Proceso(id,tiempo,operador,num1,num2)
+            n_proceso= Proceso(id,tiempo,operador,num1,num2)
             self.nuevos.append(n_proceso)
     def actualizarDisplayProcesosNuevos(self):
         self.ui.lcdNumber.display(str(len(self.nuevos)))
