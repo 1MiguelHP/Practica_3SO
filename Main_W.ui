@@ -22,7 +22,7 @@
 QPushButton {
     background-color: #1E1E1E;
     border: 1px solid #292929;
-    color: #BB86FC;
+    color: #E0E0E0;
 }
 
 QPushButton:hover {
@@ -45,8 +45,8 @@ QLabel {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>50</y>
+      <x>20</x>
+      <y>30</y>
       <width>141</width>
       <height>16</height>
      </rect>
@@ -55,6 +55,7 @@ QLabel {
      <font>
       <family>Segoe Print</family>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -65,8 +66,8 @@ QLabel {
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>380</y>
+      <x>30</x>
+      <y>520</y>
       <width>141</width>
       <height>16</height>
      </rect>
@@ -75,6 +76,7 @@ QLabel {
      <font>
       <family>Segoe Print</family>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -85,8 +87,8 @@ QLabel {
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>40</y>
+      <x>10</x>
+      <y>290</y>
       <width>201</width>
       <height>16</height>
      </rect>
@@ -95,6 +97,7 @@ QLabel {
      <font>
       <family>Segoe Print</family>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -105,8 +108,8 @@ QLabel {
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>50</y>
+      <x>600</x>
+      <y>130</y>
       <width>201</width>
       <height>16</height>
      </rect>
@@ -115,6 +118,7 @@ QLabel {
      <font>
       <family>Segoe Print</family>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -135,8 +139,8 @@ QLabel {
    <widget class="QLCDNumber" name="lcdNumber_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>720</y>
+      <x>390</x>
+      <y>30</y>
       <width>64</width>
       <height>23</height>
      </rect>
@@ -155,6 +159,7 @@ QLabel {
      <font>
       <family>Segoe Print</family>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -165,8 +170,8 @@ QLabel {
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>720</y>
+      <x>380</x>
+      <y>0</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -175,6 +180,7 @@ QLabel {
      <font>
       <family>Segoe Print</family>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -185,8 +191,8 @@ QLabel {
    <widget class="QPushButton" name="Comenzar">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>680</y>
+      <x>370</x>
+      <y>660</y>
       <width>161</width>
       <height>61</height>
      </rect>
@@ -195,8 +201,22 @@ QLabel {
      <font>
       <family>Segoe Print</family>
       <pointsize>12</pointsize>
+      <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #0B15F5; /* Color de fondo azul */
+    color: #FFFFFF; /* Color de texto blanco */
+    border: none; /* Elimina el borde */
+    padding: 8px 16px; /* Ajusta el espaciado interno */
+}
+
+QPushButton:hover {
+    background-color: #4e97ff; /* Cambia el tono de azul al pasar el mouse */
+}
+</string>
     </property>
     <property name="text">
      <string>Comenzar</string>
@@ -205,10 +225,10 @@ QLabel {
    <widget class="QTableWidget" name="table_pListos">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>80</y>
+      <x>10</x>
+      <y>60</y>
       <width>311</width>
-      <height>531</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="font">
@@ -217,16 +237,24 @@ QLabel {
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QHeaderView::section {
+     <string notr="true">QTableView {
+    background-color: #535353; /* Cambia XXXXXX por el color de fondo deseado */
+    color: #FFFFFF; /* Color de texto */
+}
+QHeaderView::section {
     background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
     color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
     padding: 4px;
     border: 1px solid #6c6c6c;
 }
 QHeaderView::section {
+    background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
+    color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
+    padding: 4px;
+    border: 1px solid #6c6c6c;
     font-size: 9pt; /* Un tamaño más grande de texto */
     font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
-    
+    font-weight: bold; /* Letras en negritas */
 }
 </string>
     </property>
@@ -246,12 +274,73 @@ QHeaderView::section {
      </property>
     </column>
    </widget>
-   <widget class="QTableWidget" name="table_pListos_2">
+   <widget class="QTableWidget" name="table_pEjecucion">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>80</y>
-      <width>281</width>
+      <x>10</x>
+      <y>320</y>
+      <width>511</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe Print</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTableView {
+    background-color: #535353; /* Cambia XXXXXX por el color de fondo deseado */
+    color: #FFFFFF; /* Color de texto */
+}
+QHeaderView::section {
+    background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
+    color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
+    padding: 4px;
+    border: 1px solid #6c6c6c;
+}
+QHeaderView::section {
+    background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
+    color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
+    padding: 4px;
+    border: 1px solid #6c6c6c;
+    font-size: 9pt; /* Un tamaño más grande de texto */
+    font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
+    font-weight: bold; /* Letras en negritas */
+}</string>
+    </property>
+    <column>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>OPE</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TME</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TT</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>TR</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QTableWidget" name="table_pBloqueados">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>550</y>
+      <width>211</width>
       <height>161</height>
      </rect>
     </property>
@@ -261,72 +350,25 @@ QHeaderView::section {
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QHeaderView::section {
+     <string notr="true">QTableView {
+    background-color: #535353; /* Cambia XXXXXX por el color de fondo deseado */
+    color: #FFFFFF; /* Color de texto */
+}
+QHeaderView::section {
     background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
     color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
     padding: 4px;
     border: 1px solid #6c6c6c;
 }
 QHeaderView::section {
-    font-size: 9pt; /* Un tamaño más grande de texto */
-    font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
-    
-}
-</string>
-    </property>
-    <row>
-     <property name="text">
-      <string>ID</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>OPER</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>TME</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>TT</string>
-     </property>
-    </row>
-    <row>
-     <property name="text">
-      <string>TR</string>
-     </property>
-    </row>
-   </widget>
-   <widget class="QTableWidget" name="table_pListos_3">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>410</y>
-      <width>211</width>
-      <height>231</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Segoe Print</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QHeaderView::section {
     background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
     color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
     padding: 4px;
     border: 1px solid #6c6c6c;
-}
-QHeaderView::section {
     font-size: 9pt; /* Un tamaño más grande de texto */
     font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
-    
-}
-</string>
+    font-weight: bold; /* Letras en negritas */
+}</string>
     </property>
     <column>
      <property name="text">
@@ -339,13 +381,13 @@ QHeaderView::section {
      </property>
     </column>
    </widget>
-   <widget class="QTableWidget" name="table_pListos_4">
+   <widget class="QTableWidget" name="table_pTerminados">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>90</y>
-      <width>321</width>
-      <height>531</height>
+      <x>590</x>
+      <y>160</y>
+      <width>311</width>
+      <height>461</height>
      </rect>
     </property>
     <property name="font">
@@ -354,16 +396,24 @@ QHeaderView::section {
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QHeaderView::section {
+     <string notr="true">QTableView {
+    background-color: #535353; /* Cambia XXXXXX por el color de fondo deseado */
+    color: #FFFFFF; /* Color de texto */
+}
+QHeaderView::section {
     background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
     color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
     padding: 4px;
     border: 1px solid #6c6c6c;
 }
 QHeaderView::section {
+    background-color: #333333; /* Un color de fondo más claro o más oscuro según tu tema */
+    color: #FFFFFF; /* Un color de texto que contraste bien con el fondo */
+    padding: 4px;
+    border: 1px solid #6c6c6c;
     font-size: 9pt; /* Un tamaño más grande de texto */
     font-family: &quot;Segoe Print&quot;; /* Cambia a la fuente que prefieras */
-    
+    font-weight: bold; /* Letras en negritas */
 }
 </string>
     </property>
@@ -390,7 +440,7 @@ QHeaderView::section {
      <x>0</x>
      <y>0</y>
      <width>1090</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

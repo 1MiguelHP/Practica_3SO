@@ -55,7 +55,7 @@ class Ui_Ventana_Procesos(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.label = QLabel(self.centralwidget)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(160, 10, 101, 16))
+        self.label.setGeometry(QRect(110, 10, 101, 16))
         self.label.setStyleSheet(u"QLabel {\n"
 "    font-family: \"Arial\"; /* Cambia \"Arial\" por la familia de fuentes que prefieras */\n"
 "    font-size: 8pt; /* Ajusta el tama\u00f1o de la fuente seg\u00fan necesites */\n"
@@ -66,14 +66,25 @@ class Ui_Ventana_Procesos(object):
 "")
         self.spinBox = QSpinBox(self.centralwidget)
         self.spinBox.setObjectName(u"spinBox")
-        self.spinBox.setGeometry(QRect(140, 40, 42, 22))
+        self.spinBox.setGeometry(QRect(140, 40, 51, 31))
         self.acept = QPushButton(self.centralwidget)
         self.acept.setObjectName(u"acept")
-        self.acept.setGeometry(QRect(220, 40, 75, 24))
+        self.acept.setGeometry(QRect(220, 40, 91, 31))
+        self.acept.setStyleSheet(u"QPushButton {\n"
+"    background-color: #2B9D11; /* Color de fondo azul */\n"
+"    color: #FFFFFF; /* Color de texto blanco */\n"
+"    border: none; /* Elimina el borde */\n"
+"    padding: 2px 16px; /* Ajusta el espaciado interno */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #8EF777; /* Cambia el tono de azul al pasar el mouse */\n"
+"}\n"
+"")
         Ventana_Procesos.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(Ventana_Procesos)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 398, 22))
+        self.menubar.setGeometry(QRect(0, 0, 398, 21))
         Ventana_Procesos.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(Ventana_Procesos)
         self.statusbar.setObjectName(u"statusbar")
